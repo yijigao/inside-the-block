@@ -1,0 +1,247 @@
+{
+ "per_validator": {
+  "Fd7btgySsrjuo25CJCj7oE7VPMyezDhnx7pZkj2v69Nk": {
+   "client": "agave-4.4.0+jito",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 0,
+   "fee_reversal_rate": 0.0,
+   "arrival_kendall_tau": 1.0,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "JUPiTERkf97eKN222JwY7bkpWuJnwqKtT44fsbJfhkr": {
+   "client": "v26.10.6+jito",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": 0.0,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n": {
+   "client": "agave-4.3.2+jito",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": -0.3333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  }
+ },
+ "per_landed_leader": {
+  "SWiz7QwnYPm61pWWUUkMhj4r5pZLP1SvYibdHcB2cov": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "87CcUxpyR72ZyfaZirj86mqkbk5uuU2EfnwTegVMLJL5": {
+   "client": "26.10.6",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "DRpbCBMxVnDK7maPM5tGv6MvB3v1sRMC86PZ8okm21hy": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "8tjFeSApQ85ThoQXT28acfF2KUfQr3TvTdirSkzNnYC7": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "HnfPZDrbJFooiP9vvgWrjx3baXVNAZCgisT58gyMCgML": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "Fc6NNdS2j3EmrWbU6Uqt6wsKB5ef72NjaWfNxKYbULGD": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "FBKFWadXZJahGtFitAsBvbqh5968gLY7dMBBJUoUjeNi": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "5ejbTALcBsKQ7Cj1iSuu2mY5jqbYHqh9gF5ERXLiYj1z": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "2fBQ7AyQsgpQkJAAzwVLVu1we2tDV4C8g2mgi2kLFnAq": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "9rkJMARqK6VBkcxGfKBAwnA44gPAfGxPbPsfsggFNDSQ": {
+   "client": "4.4.0",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": 0.0,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "HpcB5Qg8Y9E73dUkot5e8HkgAJbExsYeUzniY4bCuKac": {
+   "client": "4.4.0",
+   "sent": 7,
+   "landed": 7,
+   "in_window": 0,
+   "late": 7,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 1,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": 1.0,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "Aw5wEMXhbygFLR7jHtHpih8QvxVBGAMTqsQ2SjWPk1ex": {
+   "client": "4.4.0",
+   "sent": 3,
+   "landed": 3,
+   "in_window": 0,
+   "late": 3,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": -1.0,
+   "conflict_outcomes": []
+  }
+ },
+ "overall": {
+  "fee_pairs": 18,
+  "fee_reversals": 5,
+  "fee_reversal_rate": 0.2777777777777778,
+  "conclusion": "ARRIVAL_DOMINANT",
+  "conclusion_text": "Block order mostly follows send order even against fee differences: ordering is arrival-driven within measurement noise."
+ }
+}

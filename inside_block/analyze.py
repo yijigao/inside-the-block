@@ -36,18 +36,15 @@ def kendall_tau(send_order: list[int], block_order: list[int]) -> float | None:
     return (concordant - discordant) / total
 
 
-def analyze_rows(rows: list[dict]) -> dict:
-    by_validator: dict[str, list[dict]] = defaultdict(list)
-    for r in rows:
-        by_validator[r["target_leader_node"]].append(r)
-
-    per_validator: dict[str, dict] = {}
+def _group_stats(by_group: dict[str, list[dict]], client_key: str):
+    """Ordering statistics per group. Fee pairs and arrival tau are only
+    meaningful WITHIN one batch (probes from different batches never share
+    a block), so they are computed per batch and pooled within the group."""
+    per_group: dict[str, dict] = {}
     total_fee_pairs = 0
     total_reversals = 0
-    for node, vrows in by_validator.items():
+    for node, vrows in by_group.items():
         landed = [r for r in vrows if block_key(r) is not None]
-        # Fee pairs and arrival tau are only meaningful WITHIN one batch
-        # (probes from different batches never share a block).
         pairs = reversals = 0
         batch_taus: list[float] = []
         landed_by_batch: dict[str, list[dict]] = defaultdict(list)
@@ -74,7 +71,6 @@ def analyze_rows(rows: list[dict]) -> dict:
         total_fee_pairs += pairs
         total_reversals += reversals
         tau = (sum(batch_taus) / len(batch_taus)) if batch_taus else None
-        # conflict pairs: exactly the low-first / high-second pair per batch
         conflict_outcomes: list[str] = []
         by_batch: dict[str, list[dict]] = defaultdict(list)
         for r in landed:
@@ -90,8 +86,8 @@ def analyze_rows(rows: list[dict]) -> dict:
         in_window = sum(1 for r in vrows if r["status"] == "in_window")
         late = sum(1 for r in vrows if r["status"] == "late")
         dropped = sum(1 for r in vrows if r["status"] == "dropped")
-        per_validator[node] = {
-            "client": vrows[0].get("target_client", ""),
+        per_group[node] = {
+            "client": vrows[0].get(client_key, ""),
             "sent": sent,
             "landed": len(landed),
             "in_window": in_window,
@@ -104,6 +100,26 @@ def analyze_rows(rows: list[dict]) -> dict:
             "arrival_kendall_tau": tau,
             "conflict_outcomes": conflict_outcomes,
         }
+    return per_group, total_fee_pairs, total_reversals
+
+
+def analyze_rows(rows: list[dict]) -> dict:
+    # Primary attribution: the validator each batch was AIMED at.
+    by_validator: dict[str, list[dict]] = defaultdict(list)
+    for r in rows:
+        by_validator[r["target_leader_node"]].append(r)
+    per_validator, total_fee_pairs, total_reversals = _group_stats(by_validator, "target_client")
+
+    # Secondary attribution: the leader that ACTUALLY included the batch.
+    # Aimed batches sent through public RPC land systematically late
+    # (~65 slots after the target window; measured 2026-11-05), but they
+    # land together in 1-2 consecutive blocks, so the including leader's
+    # ordering of the batch is directly observable.
+    by_landed: dict[str, list[dict]] = defaultdict(list)
+    for r in rows:
+        if r.get("landed_leader_node"):
+            by_landed[r["landed_leader_node"]].append(r)
+    per_landed, _, _ = _group_stats(by_landed, "landed_client_version")
 
     overall_rate = (total_reversals / total_fee_pairs) if total_fee_pairs else None
     if total_fee_pairs < 8:
@@ -123,6 +139,7 @@ def analyze_rows(rows: list[dict]) -> dict:
         conclusion_text = "Reversal rate is near chance: no stable ordering rule is distinguishable from noise in this data."
     return {
         "per_validator": per_validator,
+        "per_landed_leader": per_landed,
         "overall": {
             "fee_pairs": total_fee_pairs,
             "fee_reversals": total_reversals,

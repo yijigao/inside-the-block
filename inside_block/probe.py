@@ -30,6 +30,7 @@ def main(argv: list[str] | None = None) -> int:
     p_run = sub.add_parser("run", help="fire one probe batch at the next target leader window (live) or simulate it (default dry-run)")
     p_run.add_argument("--live", action="store_true")
     p_run.add_argument("--batch-id", default=None)
+    p_run.add_argument("--target", default=None, help="validator name from config to aim at (default: earliest window)")
 
     sub.add_parser("collect", help="locate landed probe signatures and build data/summary.{json,csv}")
     sub.add_parser("analyze", help="compute ordering statistics into data/analysis.json and data/tables.md")
@@ -47,7 +48,7 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(result, indent=1))
         return 0
     if args.command == "run":
-        records = run_probe(cfg, keys_dir, data_dir, live=args.live, max_fee_sol=args.max_fee_sol, batch_id=args.batch_id)
+        records = run_probe(cfg, keys_dir, data_dir, live=args.live, max_fee_sol=args.max_fee_sol, batch_id=args.batch_id, target_name=args.target)
         print(json.dumps([r.__dict__ for r in records], indent=1, default=str))
         return 0
     if args.command == "collect":

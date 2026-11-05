@@ -56,6 +56,32 @@ class RpcClient:
         raise RpcError(f"{method} failed after {self.max_retries} tries: {last_exc}")
 
     # --- convenience wrappers -------------------------------------------------
+    def send_transaction_race(self, tx_b64: str, extra_urls: list[str]) -> str:
+        """Send the same signed transaction through several endpoints at once;
+        first success wins. Safe: identical signature, the network dedupes."""
+        import threading
+
+        if not extra_urls:
+            return self.send_transaction(tx_b64)
+        results: dict[str, str] = {}
+        errors: list[str] = []
+
+        def worker(url: str) -> None:
+            try:
+                results[url] = RpcClient(url, timeout=self.timeout, max_retries=1).send_transaction(tx_b64)
+            except Exception as exc:  # noqa: BLE001 - collected and reported below
+                errors.append(f"{url}: {exc}")
+
+        threads = [threading.Thread(target=worker, args=(u,), daemon=True) for u in [self.url, *extra_urls]]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join(timeout=self.timeout + 5)
+        for url in [self.url, *extra_urls]:
+            if url in results:
+                return results[url]
+        raise RpcError(f"all endpoints failed: {errors}")
+
     def get_slot(self) -> int:
         return int(self.call("getSlot"))
 
@@ -66,7 +92,7 @@ class RpcClient:
         return self.call("getLatestBlockhash")["value"]["blockhash"]
 
     def get_leader_schedule(self, epoch: int) -> dict[str, list[int]]:
-        result = self.call("getLeaderSchedule", [epoch])
+        result = self.call("getLeaderSchedule", [None, {"epoch": epoch}])
         return result or {}
 
     def get_slot_leaders(self, start_slot: int, limit: int) -> list[str]:

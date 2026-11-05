@@ -21,6 +21,13 @@ def collect(cfg_rpc_url: str, data_dir: Path) -> list[dict]:
     data/raw/landed.jsonl, data/summary.json and data/summary.csv.
     """
     rpc = RpcClient(cfg_rpc_url)
+    version_map: dict[str, str | None] = {}
+    vm_path = data_dir / "version_map.json"
+    if vm_path.exists():
+        try:
+            version_map = json.loads(vm_path.read_text())
+        except Exception:  # noqa: BLE001
+            version_map = {}
     raw_dir = data_dir / "raw"
     raw_dir.mkdir(parents=True, exist_ok=True)
     sends = [s for s in load_sends(data_dir) if s.get("mode") == "live" and s.get("signature")]
@@ -34,6 +41,14 @@ def collect(cfg_rpc_url: str, data_dir: Path) -> list[dict]:
     for s, st in zip(sends, statuses):
         if st and st.get("slot") is not None and st.get("confirmationStatus") in ("confirmed", "finalized"):
             landed_slots[s["signature"]] = int(st["slot"])
+
+    landed_leader: dict[int, str | None] = {}
+    for slot in sorted(set(landed_slots.values())):
+        try:
+            leaders = rpc.get_slot_leaders(slot, 1)
+            landed_leader[slot] = leaders[0] if leaders else None
+        except Exception:  # noqa: BLE001 - leader attribution is best-effort
+            landed_leader[slot] = None
 
     block_sigs: dict[int, list[str]] = {}
     for slot in sorted(set(landed_slots.values())):
@@ -69,6 +84,8 @@ def collect(cfg_rpc_url: str, data_dir: Path) -> list[dict]:
                 "window_start_slot": s["window_start_slot"],
                 "window_slots": s["window_slots"],
                 "landed_slot": slot,
+                "landed_leader_node": landed_leader.get(slot) if slot is not None else None,
+                "landed_client_version": (version_map.get(landed_leader.get(slot)) if slot is not None else None),
                 "block_index": index,
                 "status": status,
                 "estimated_fee_lamports": s["estimated_fee_lamports"],

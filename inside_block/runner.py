@@ -36,6 +36,13 @@ class SendRecord:
     simulate_err: str | None = None
 
 
+def absolutize(schedule: dict[str, list[int]], epoch_info: dict) -> dict[str, list[int]]:
+    """getLeaderSchedule returns slot indexes within the epoch; convert to
+    absolute slots using epoch info (absoluteSlot - slotIndex = first slot)."""
+    first = int(epoch_info["absoluteSlot"]) - int(epoch_info["slotIndex"])
+    return {k: [first + i for i in v] for k, v in schedule.items()}
+
+
 def find_windows(schedule: dict[str, list[int]], node_pubkey: str) -> list[list[int]]:
     """Group a validator's leader slots into maximal consecutive windows (usually 4)."""
     slots = sorted(schedule.get(node_pubkey, []))
@@ -91,7 +98,7 @@ def _pick_dryrun_window(cfg: ProbeConfig, rpc: RpcClient):
     window of a configured target if one is near, otherwise fall back to the
     current slot leaders so the batch can be built and simulated now."""
     epoch = rpc.get_epoch_info()
-    schedule = rpc.get_leader_schedule(epoch["epoch"])
+    schedule = absolutize(rpc.get_leader_schedule(epoch["epoch"]), epoch)
     current_slot = rpc.get_slot()
     for t in cfg.configured_validators():
         w = next_window(schedule, t, current_slot)
@@ -110,6 +117,7 @@ def run_probe(
     live: bool,
     max_fee_sol: float = 0.05,
     batch_id: str | None = None,
+    target_name: str | None = None,
 ) -> list[SendRecord]:
     if live and os.environ.get("CONFIRM_LIVE") != "1":
         raise SystemExit("refusing live mode: set CONFIRM_LIVE=1 in the environment as well as --live")
@@ -127,10 +135,12 @@ def run_probe(
     if live:
         # Wait for the next target window and fire inside it.
         epoch = rpc.get_epoch_info()
-        schedule = rpc.get_leader_schedule(epoch["epoch"])
+        schedule = absolutize(rpc.get_leader_schedule(epoch["epoch"]), epoch)
         current = rpc.get_slot()
         candidates = []
         for t in cfg.configured_validators():
+            if target_name and t.name != target_name:
+                continue
             w = next_window(schedule, t, current + 1)
             if w:
                 candidates.append((w[0], t, w))
@@ -138,24 +148,41 @@ def run_probe(
             raise SystemExit("no upcoming leader window for any configured target in this epoch")
         candidates.sort()
         _, target, window = candidates[0]
+        # Wait until the window is close before fetching the blockhash and
+        # building transactions: a blockhash only stays valid ~150 slots,
+        # so building early for a far-away window would expire.
+        while window[0] - rpc.get_slot() > 30:
+            time.sleep(0.5)
         blockhash = rpc.get_latest_blockhash()
         txs = [(spec, build_transaction(spec, probes[spec.account_index], blockhash, cfg.batch.transfer_lamports)) for spec in plan]
-        while rpc.get_slot() < window[0]:
-            time.sleep(0.1)
-        records: list[SendRecord] = []
-        for spec, tx in txs:
+        # Fire a few slots early: public-RPC send latency from a remote
+        # sender is 1-3 s, so submitting exactly at the window start lands
+        # the batch after the window. All transactions are submitted
+        # concurrently (sequential submission through one RPC connection
+        # spreads a 10-tx batch over ~30 s / ~75 slots, as batch B001
+        # demonstrated); intended order is kept via send_rank and a small
+        # per-rank head start.
+        while rpc.get_slot() < window[0] - 65:
+            time.sleep(0.05)
+        extra_urls = [u.strip() for u in os.environ.get("SOLANA_RPC_EXTRA", "").split(",") if u.strip()]
+        from concurrent.futures import ThreadPoolExecutor
+
+        def fire(item):
+            spec, tx = item
             ledger.check(spec.estimated_fee_lamports, cap)
+            time.sleep(spec.send_rank * 0.01)
             mono = time.monotonic()
             wall = datetime.now(timezone.utc).isoformat()
-            sig = rpc.send_transaction(transaction_to_b64(tx))
+            sig = rpc.send_transaction_race(transaction_to_b64(tx), extra_urls)
             ledger.record(spec.estimated_fee_lamports, "send-estimated", str(sig))
-            records.append(
-                SendRecord(str(sig), batch_id, spec.role, spec.send_rank, spec.fee_price_micro,
-                           str(probes[spec.account_index].pubkey()), spec.memo, "live",
-                           target.name, target.node_pubkey, target.vote_pubkey, target.client,
-                           window[0], window, mono, wall, spec.estimated_fee_lamports)
-            )
-            time.sleep(cfg.batch.stagger_ms / 1000.0)
+            return SendRecord(str(sig), batch_id, spec.role, spec.send_rank, spec.fee_price_micro,
+                              str(probes[spec.account_index].pubkey()), spec.memo, "live",
+                              target.name, target.node_pubkey, target.vote_pubkey, target.client,
+                              window[0], window, mono, wall, spec.estimated_fee_lamports)
+
+        with ThreadPoolExecutor(max_workers=len(txs)) as pool:
+            records = list(pool.map(fire, txs))
+        records.sort(key=lambda r: r.send_rank)
     else:
         target, window, current_slot, fallback = _pick_dryrun_window(cfg, rpc)
         blockhash = rpc.get_latest_blockhash()
