@@ -1,0 +1,18 @@
+services:
+  probe:
+    build: .
+    environment:
+      # RPC endpoint (default public mainnet-beta if unset)
+      INSIDE_BLOCK_RPC_URL: ${INSIDE_BLOCK_RPC_URL:-https://api.mainnet-beta.solana.com}
+      # Live sending requires BOTH --live on the command AND this set to 1
+      CONFIRM_LIVE: ${CONFIRM_LIVE:-0}
+      # Path (inside container) to the MAIN experiment keypair file, mounted read-only below.
+      # Point the host side at your real keypair via INSIDE_BLOCK_KEYPAIR_HOST.
+      INSIDE_BLOCK_KEYPAIR_PATH: /keys/main.json
+    volumes:
+      - ./keys:/app/keys
+      - ./data:/app/data
+      - ${INSIDE_BLOCK_KEYPAIR_HOST:-./keys/main.json}:/keys/main.json:ro
+    # usage: docker compose run --rm probe run --config config.json            (dry-run, default)
+    #        docker compose run --rm probe setup                              (dry-run setup)
+    #        CONFIRM_LIVE=1 docker compose run --rm probe run --live          (live, capped)

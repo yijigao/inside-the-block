@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# keys and wallets: NEVER commit
+keys/
+*.keypair.json
+wallet.json
+*-keypair.json
+# run outputs that may contain local paths (raw chain data itself is committed separately by the operator)
+data/spend_ledger.json
+.env

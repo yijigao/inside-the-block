@@ -1,0 +1,61 @@
+{
+ "batch": {
+  "arm_ahead_slots": 8,
+  "cu_limit": 30000,
+  "funding_lamports_per_probe": 2000000,
+  "probe_account_count": 9,
+  "stagger_ms": 75,
+  "transfer_lamports": 1
+ },
+ "comment": "Selected 2026-11-05 ~13:18 CST for epoch 1077: 8 validators, 5 distinct version strings (4.4.0, 4.4.0-rc.1, 4.3.2, 26.10.6, 26.10.5, 0.1.1 -> 6), all running_jito per Kobe API. Windows verified dense in slots 465584000-465617000.",
+ "validators": [
+  {
+   "name": "everstake-4.4.0",
+   "node_pubkey": "Fd7btgySsrjuo25CJCj7oE7VPMyezDhnx7pZkj2v69Nk",
+   "vote_pubkey": "CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1",
+   "client": "agave-4.4.0+jito"
+  },
+  {
+   "name": "helius-4.4.0",
+   "node_pubkey": "HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU",
+   "vote_pubkey": "he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk",
+   "client": "agave-4.4.0+jito"
+  },
+  {
+   "name": "jupiter-26.10.6",
+   "node_pubkey": "JUPiTERkf97eKN222JwY7bkpWuJnwqKtT44fsbJfhkr",
+   "vote_pubkey": "CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb",
+   "client": "v26.10.6+jito"
+  },
+  {
+   "name": "fd-26.10.5",
+   "node_pubkey": "9eGrDohdNTAo61DRHyfMuqKWXqYnA3i254Wiszxe8FoY",
+   "vote_pubkey": "CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB",
+   "client": "v26.10.5+jito"
+  },
+  {
+   "name": "agave-4.3.2-a",
+   "node_pubkey": "GBQ2GvTzmjXMu97dr7WUnLKYTNim1aoZsYS53KYXAAAA",
+   "vote_pubkey": "AuGwcQWqWuNbnrkgERSp8VN6kZeJiM4AZuLMrwbkzg9m",
+   "client": "agave-4.3.2+jito"
+  },
+  {
+   "name": "chorus-4.3.2",
+   "node_pubkey": "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
+   "vote_pubkey": "Chorus6Kis8tFHA7AowrPMcRJk3LbApHTYpgSNXzY5KE",
+   "client": "agave-4.3.2+jito"
+  },
+  {
+   "name": "v0.1.1",
+   "node_pubkey": "FBbqKvwLfKGZrKrfSbPJz4ymQ7zMarhRyZtu1RBkSe89",
+   "vote_pubkey": "H43AYFsvhNuALQieHpLXefp1ECgEBT6oVnS4EcTsC25C",
+   "client": "v0.1.1+jito"
+  },
+  {
+   "name": "rc-4.4.0-rc.1",
+   "node_pubkey": "mineL1YNwcRnxN93B2sX6q22R11WfRqxnY4NBV8KfFY",
+   "vote_pubkey": "6q1VNp8Vy2Go12vb8CwbjUqqj2SXr2JYftJRWs71sW23",
+   "client": "agave-4.4.0-rc.1+jito"
+  }
+ ]
+}
