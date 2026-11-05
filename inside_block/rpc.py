@@ -117,10 +117,18 @@ class RpcClient:
         return list(result.get("signatures") or [])
 
     def get_signature_statuses(self, signatures: list[str]) -> list[dict | None]:
-        result = self.call(
-            "getSignatureStatuses", [signatures, {"searchTransactionHistory": True}]
-        )
-        return result["value"]
+        # Public RPC endpoints reject very large getSignatureStatuses payloads
+        # (HTTP 413 once a campaign passes a few hundred signatures), so query
+        # in chunks and stitch the per-chunk "value" lists back together.
+        values: list[dict | None] = []
+        chunk = 100
+        for i in range(0, len(signatures), chunk):
+            result = self.call(
+                "getSignatureStatuses",
+                [signatures[i : i + chunk], {"searchTransactionHistory": True}],
+            )
+            values.extend(result["value"])
+        return values
 
     def simulate_transaction(self, tx_b64: str) -> dict:
         result = self.call(

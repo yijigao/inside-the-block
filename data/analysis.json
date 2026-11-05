@@ -2,33 +2,69 @@
  "per_validator": {
   "Fd7btgySsrjuo25CJCj7oE7VPMyezDhnx7pZkj2v69Nk": {
    "client": "agave-4.4.0+jito",
-   "sent": 10,
-   "landed": 10,
+   "sent": 250,
+   "landed": 250,
    "in_window": 0,
-   "late": 10,
+   "late": 250,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 6,
-   "fee_reversals": 0,
-   "fee_reversal_rate": 0.0,
-   "arrival_kendall_tau": 1.0,
+   "fee_pairs": 150,
+   "fee_reversals": 54,
+   "fee_reversal_rate": 0.36,
+   "arrival_kendall_tau": 0.13333333333333333,
    "conflict_outcomes": [
-    "low_fee_first"
+    "low_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "high_fee_first"
    ]
   },
   "JUPiTERkf97eKN222JwY7bkpWuJnwqKtT44fsbJfhkr": {
    "client": "v26.10.6+jito",
-   "sent": 10,
-   "landed": 10,
-   "in_window": 0,
-   "late": 10,
+   "sent": 130,
+   "landed": 130,
+   "in_window": 1,
+   "late": 129,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 6,
-   "fee_reversals": 2,
-   "fee_reversal_rate": 0.3333333333333333,
-   "arrival_kendall_tau": 0.0,
+   "fee_pairs": 78,
+   "fee_reversals": 37,
+   "fee_reversal_rate": 0.47435897435897434,
+   "arrival_kendall_tau": 0.28205128205128205,
    "conflict_outcomes": [
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "high_fee_first",
     "high_fee_first"
    ]
   },
@@ -47,64 +83,154 @@
    "conflict_outcomes": [
     "high_fee_first"
    ]
+  },
+  "HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU": {
+   "client": "agave-4.4.0+jito",
+   "sent": 160,
+   "landed": 160,
+   "in_window": 0,
+   "late": 160,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 96,
+   "fee_reversals": 37,
+   "fee_reversal_rate": 0.3854166666666667,
+   "arrival_kendall_tau": -0.14583333333333331,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "high_fee_first"
+   ]
+  },
+  "9eGrDohdNTAo61DRHyfMuqKWXqYnA3i254Wiszxe8FoY": {
+   "client": "v26.10.5+jito",
+   "sent": 40,
+   "landed": 40,
+   "in_window": 0,
+   "late": 40,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 24,
+   "fee_reversals": 12,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": 0.41666666666666663,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "low_fee_first",
+    "low_fee_first",
+    "low_fee_first"
+   ]
+  },
+  "GBQ2GvTzmjXMu97dr7WUnLKYTNim1aoZsYS53KYXAAAA": {
+   "client": "agave-4.3.2+jito",
+   "sent": 30,
+   "landed": 30,
+   "in_window": 0,
+   "late": 30,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 18,
+   "fee_reversals": 9,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": -0.2222222222222222,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "high_fee_first",
+    "low_fee_first"
+   ]
+  },
+  "FBbqKvwLfKGZrKrfSbPJz4ymQ7zMarhRyZtu1RBkSe89": {
+   "client": "v0.1.1+jito",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": -1.0,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
   }
  },
  "per_landed_leader": {
   "SWiz7QwnYPm61pWWUUkMhj4r5pZLP1SvYibdHcB2cov": {
    "client": "4.4.0",
-   "sent": 1,
-   "landed": 1,
+   "sent": 10,
+   "landed": 10,
    "in_window": 0,
-   "late": 1,
+   "late": 10,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 0,
-   "fee_reversals": 0,
-   "fee_reversal_rate": null,
-   "arrival_kendall_tau": null,
-   "conflict_outcomes": []
+   "fee_pairs": 3,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 0.0,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
   },
   "87CcUxpyR72ZyfaZirj86mqkbk5uuU2EfnwTegVMLJL5": {
    "client": "26.10.6",
-   "sent": 1,
-   "landed": 1,
+   "sent": 5,
+   "landed": 5,
    "in_window": 0,
-   "late": 1,
+   "late": 5,
    "dropped": 0,
    "inclusion_rate": 1.0,
    "fee_pairs": 0,
    "fee_reversals": 0,
    "fee_reversal_rate": null,
-   "arrival_kendall_tau": null,
+   "arrival_kendall_tau": -0.3333333333333333,
    "conflict_outcomes": []
   },
   "HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU": {
    "client": "4.4.0",
-   "sent": 1,
-   "landed": 1,
+   "sent": 8,
+   "landed": 8,
    "in_window": 0,
-   "late": 1,
+   "late": 8,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 0,
+   "fee_pairs": 1,
    "fee_reversals": 0,
-   "fee_reversal_rate": null,
-   "arrival_kendall_tau": null,
+   "fee_reversal_rate": 0.0,
+   "arrival_kendall_tau": -1.0,
    "conflict_outcomes": []
   },
   "DRpbCBMxVnDK7maPM5tGv6MvB3v1sRMC86PZ8okm21hy": {
    "client": "4.4.0",
-   "sent": 1,
-   "landed": 1,
+   "sent": 31,
+   "landed": 31,
    "in_window": 0,
-   "late": 1,
+   "late": 31,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 0,
-   "fee_reversals": 0,
-   "fee_reversal_rate": null,
-   "arrival_kendall_tau": null,
-   "conflict_outcomes": []
+   "fee_pairs": 15,
+   "fee_reversals": 5,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": 0.2222222222222222,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "low_fee_first",
+    "low_fee_first"
+   ]
   },
   "8tjFeSApQ85ThoQXT28acfF2KUfQr3TvTdirSkzNnYC7": {
    "client": "4.4.0",
@@ -122,52 +248,59 @@
   },
   "HnfPZDrbJFooiP9vvgWrjx3baXVNAZCgisT58gyMCgML": {
    "client": "4.4.0",
-   "sent": 1,
-   "landed": 1,
+   "sent": 11,
+   "landed": 11,
    "in_window": 0,
-   "late": 1,
+   "late": 11,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 0,
-   "fee_reversals": 0,
-   "fee_reversal_rate": null,
-   "arrival_kendall_tau": null,
-   "conflict_outcomes": []
+   "fee_pairs": 6,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": 0.0,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
   },
   "Fc6NNdS2j3EmrWbU6Uqt6wsKB5ef72NjaWfNxKYbULGD": {
    "client": "4.4.0",
-   "sent": 1,
-   "landed": 1,
+   "sent": 21,
+   "landed": 21,
    "in_window": 0,
-   "late": 1,
+   "late": 21,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 0,
-   "fee_reversals": 0,
-   "fee_reversal_rate": null,
-   "arrival_kendall_tau": null,
-   "conflict_outcomes": []
+   "fee_pairs": 12,
+   "fee_reversals": 5,
+   "fee_reversal_rate": 0.4166666666666667,
+   "arrival_kendall_tau": -0.16666666666666666,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "low_fee_first"
+   ]
   },
   "FBKFWadXZJahGtFitAsBvbqh5968gLY7dMBBJUoUjeNi": {
    "client": "4.4.0",
-   "sent": 1,
-   "landed": 1,
+   "sent": 11,
+   "landed": 11,
    "in_window": 0,
-   "late": 1,
+   "late": 11,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 0,
-   "fee_reversals": 0,
-   "fee_reversal_rate": null,
-   "arrival_kendall_tau": null,
-   "conflict_outcomes": []
+   "fee_pairs": 3,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 0.6666666666666666,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
   },
   "5ejbTALcBsKQ7Cj1iSuu2mY5jqbYHqh9gF5ERXLiYj1z": {
    "client": "4.4.0",
-   "sent": 1,
-   "landed": 1,
+   "sent": 2,
+   "landed": 2,
    "in_window": 0,
-   "late": 1,
+   "late": 2,
    "dropped": 0,
    "inclusion_rate": 1.0,
    "fee_pairs": 0,
@@ -178,30 +311,33 @@
   },
   "2fBQ7AyQsgpQkJAAzwVLVu1we2tDV4C8g2mgi2kLFnAq": {
    "client": "4.4.0",
-   "sent": 1,
-   "landed": 1,
+   "sent": 20,
+   "landed": 20,
    "in_window": 0,
-   "late": 1,
+   "late": 20,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 0,
-   "fee_reversals": 0,
-   "fee_reversal_rate": null,
-   "arrival_kendall_tau": null,
-   "conflict_outcomes": []
+   "fee_pairs": 9,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.2222222222222222,
+   "arrival_kendall_tau": -0.16666666666666666,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "low_fee_first"
+   ]
   },
   "9rkJMARqK6VBkcxGfKBAwnA44gPAfGxPbPsfsggFNDSQ": {
    "client": "4.4.0",
-   "sent": 10,
-   "landed": 10,
+   "sent": 15,
+   "landed": 15,
    "in_window": 0,
-   "late": 10,
+   "late": 15,
    "dropped": 0,
    "inclusion_rate": 1.0,
-   "fee_pairs": 6,
-   "fee_reversals": 2,
-   "fee_reversal_rate": 0.3333333333333333,
-   "arrival_kendall_tau": 0.0,
+   "fee_pairs": 9,
+   "fee_reversals": 5,
+   "fee_reversal_rate": 0.5555555555555556,
+   "arrival_kendall_tau": 0.5,
    "conflict_outcomes": [
     "high_fee_first"
    ]
@@ -224,10 +360,10 @@
   },
   "Aw5wEMXhbygFLR7jHtHpih8QvxVBGAMTqsQ2SjWPk1ex": {
    "client": "4.4.0",
-   "sent": 3,
-   "landed": 3,
+   "sent": 4,
+   "landed": 4,
    "in_window": 0,
-   "late": 3,
+   "late": 4,
    "dropped": 0,
    "inclusion_rate": 1.0,
    "fee_pairs": 0,
@@ -235,13 +371,860 @@
    "fee_reversal_rate": null,
    "arrival_kendall_tau": -1.0,
    "conflict_outcomes": []
+  },
+  "JUPiTERkf97eKN222JwY7bkpWuJnwqKtT44fsbJfhkr": {
+   "client": "26.10.6",
+   "sent": 19,
+   "landed": 19,
+   "in_window": 1,
+   "late": 18,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 9,
+   "fee_reversals": 5,
+   "fee_reversal_rate": 0.5555555555555556,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "GnC339vkyXRm1jRX69dt9mapPPu2LbzXfSDoxc91qta6": {
+   "client": "4.4.0",
+   "sent": 4,
+   "landed": 4,
+   "in_window": 0,
+   "late": 4,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "5DYpYgKgHV5aswMXBLp3UfJnbbzzFnGiJPpcxVAm56bG": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "9eGrDohdNTAo61DRHyfMuqKWXqYnA3i254Wiszxe8FoY": {
+   "client": "26.10.5",
+   "sent": 13,
+   "landed": 13,
+   "in_window": 0,
+   "late": 13,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 4,
+   "fee_reversals": 1,
+   "fee_reversal_rate": 0.25,
+   "arrival_kendall_tau": 0.5,
+   "conflict_outcomes": []
+  },
+  "EvnRmnMrd69kFdbLMxWkTn1icZ7DCceRhvmb2SJXqDo4": {
+   "client": "26.10.6",
+   "sent": 16,
+   "landed": 16,
+   "in_window": 0,
+   "late": 16,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 4,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.75,
+   "arrival_kendall_tau": -0.8333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "FNKgX9dYUhYQFRTM9bkeKoRpsyEtZGNMxbdQLDzfqB8a": {
+   "client": "4.4.0",
+   "sent": 9,
+   "landed": 9,
+   "in_window": 0,
+   "late": 9,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 0.0,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n": {
+   "client": "4.3.2",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "HSDTxfgrqY8ZK88Q5Fx2DdX7zxMDqXgxJKgErTBSLoQJ": {
+   "client": "4.4.0-rc.1",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": -0.6666666666666666,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "DUND26mEDfFeaPsVof3YvbXDRvpuQX7HMUJrLgEWzYw4": {
+   "client": "4.4.0",
+   "sent": 20,
+   "landed": 20,
+   "in_window": 0,
+   "late": 20,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 12,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.25,
+   "arrival_kendall_tau": 0.0,
+   "conflict_outcomes": [
+    "low_fee_first",
+    "low_fee_first"
+   ]
+  },
+  "AWcCdYG7Dy6GX45c6QMPbgGwgRZPKcBDT4bXGb3QrVRV": {
+   "client": "4.4.0",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 4,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "EkvdKhULbMFqjKBKotAzGi3kwMvMpYNDKJXXQQmi6C1f": {
+   "client": "4.4.0",
+   "sent": 38,
+   "landed": 38,
+   "in_window": 0,
+   "late": 38,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 24,
+   "fee_reversals": 6,
+   "fee_reversal_rate": 0.25,
+   "arrival_kendall_tau": 0.16666666666666669,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "low_fee_first",
+    "high_fee_first"
+   ]
+  },
+  "2X7WoaXX9KPqNrNfvguhnwo3rjFPNsfw2t75fGjWRthz": {
+   "client": "4.4.0",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": 0.0,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "3s97yjq2MhoPVPC3U9VeE3Z5S643Pweovg88ysvrQPw5": {
+   "client": "4.4.0",
+   "sent": 9,
+   "landed": 9,
+   "in_window": 0,
+   "late": 9,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 1,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": 0.6666666666666666,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "9jxgosAfHgHzwnxsHw4RAZYaLVokMbnYtmiZBreynGFP": {
+   "client": "26.10.6",
+   "sent": 2,
+   "landed": 2,
+   "in_window": 0,
+   "late": 2,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "Ninja1spj6n9t5hVYgF3PdnYz2PLnkt7rvaw3firmjs": {
+   "client": "4.4.0-rc.1",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "C8Bey3LKVJHVqN6xPTeW8WJfUgFQAeGNBpT4Rp99JP1k": {
+   "client": "4.4.0",
+   "sent": 6,
+   "landed": 6,
+   "in_window": 0,
+   "late": 6,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 2,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 1.0,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "EBk678aQvc3cUkfGyoehfw21JQfJXjmWuBeopYc89RSV": {
+   "client": "4.4.0",
+   "sent": 7,
+   "landed": 7,
+   "in_window": 0,
+   "late": 7,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "JD549HsbJHeEKKUrKgg4Fj2iyv2RGjsV7NTZjZUrHybB": {
+   "client": "26.10.5",
+   "sent": 20,
+   "landed": 20,
+   "in_window": 0,
+   "late": 20,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 12,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.25,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "high_fee_first"
+   ]
+  },
+  "1KXvrkPXwkGF6NK1zyzVuJqbXfpenPVPP6hoiK9bsK3": {
+   "client": "4.4.0",
+   "sent": 9,
+   "landed": 9,
+   "in_window": 0,
+   "late": 9,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 0.6666666666666666,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "DrifTrN923QaouP89UxkQzFGbumKPCnfkNYQRwmZxatz": {
+   "client": "26.10.6",
+   "sent": 17,
+   "landed": 17,
+   "in_window": 0,
+   "late": 17,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 9,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.2222222222222222,
+   "arrival_kendall_tau": 1.0,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "low_fee_first"
+   ]
+  },
+  "9W3QTgBhkU4Bwg6cwnDJo6eGZ9BtZafSdu1Lo9JmWws7": {
+   "client": "4.4.0",
+   "sent": 11,
+   "landed": 11,
+   "in_window": 0,
+   "late": 11,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 4,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": -0.3333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "ACvL73V4GNnxPVfZ7K89jCrYurLyzpEuE9qirjvh2Xmi": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "5essVpBYvocZkQnkrWsMDfRPwtp4BeihJRaweKLR4dRn": {
+   "client": "4.4.0",
+   "sent": 9,
+   "landed": 9,
+   "in_window": 0,
+   "late": 9,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": -0.3333333333333333,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "shftkxnsXmqAkmLgz9Mn7bNB5Fr6mKgFc58kFHfVikj": {
+   "client": "4.4.0",
+   "sent": 13,
+   "landed": 13,
+   "in_window": 0,
+   "late": 13,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 5,
+   "fee_reversal_rate": 0.8333333333333334,
+   "arrival_kendall_tau": 0.6666666666666666,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM": {
+   "client": "26.10.6",
+   "sent": 21,
+   "landed": 21,
+   "in_window": 0,
+   "late": 21,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 12,
+   "fee_reversals": 5,
+   "fee_reversal_rate": 0.4166666666666667,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "high_fee_first"
+   ]
+  },
+  "6YY2VS44RP1sBosdEsvSaiw7gETDNx3tmg5mM5wHpTqM": {
+   "client": "26.10.6",
+   "sent": 7,
+   "landed": 7,
+   "in_window": 0,
+   "late": 7,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 1,
+   "fee_reversals": 0,
+   "fee_reversal_rate": 0.0,
+   "arrival_kendall_tau": 1.0,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "7qGNnXKW1e3DsqEaSxwxMdBTFsrK73XtWTmkGitRyMQc": {
+   "client": "4.4.0",
+   "sent": 2,
+   "landed": 2,
+   "in_window": 0,
+   "late": 2,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "9bkyxgYxRrysC1ijd6iByp9idn112CnYTw243fdH2Uvr": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "AMukCLCr52XxsEjXoDxKKxjNg4FpnsReXNaQx8aR6DJF": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "9q16BB7WGmBxf1nJTdxH5zPnBUhtHqdqXqRFjSjuM4k7": {
+   "client": "4.4.0",
+   "sent": 9,
+   "landed": 9,
+   "in_window": 0,
+   "late": 9,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 1,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "AicQr2zCWBLiBwt2r6o7iTemmtyE7q5pTKyuuupbXEQA": {
+   "client": "4.4.0",
+   "sent": 13,
+   "landed": 13,
+   "in_window": 0,
+   "late": 13,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": -0.6666666666666666,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "5Cchr1XGEg7dbBXByV5NY2ad8jfxAM7HA3x8D56rq9Ux": {
+   "client": "4.4.0",
+   "sent": 14,
+   "landed": 14,
+   "in_window": 0,
+   "late": 14,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 4,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": -0.6666666666666666,
+   "conflict_outcomes": [
+    "high_fee_first",
+    "high_fee_first"
+   ]
+  },
+  "ECZx4Dfyn2o55KTYbM9r3Dt4VZRcrdfdrst7sUbWgrdU": {
+   "client": "26.10.5",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 1,
+   "fee_reversal_rate": 0.16666666666666666,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "43Am3PKFeo9cACpqYL5Sk95rpVdxLw3Mc22PqRqZXEW2": {
+   "client": "26.10.5",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 5,
+   "fee_reversal_rate": 0.8333333333333334,
+   "arrival_kendall_tau": 0.6666666666666666,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "6y7V8dL673XFzm9QyC5vvh3itWkp7wztahBd2yDqsyrK": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "Ex1AxFCipXGfSxgvXPPT3nPQUARddCduHwKR6jHiXAaT": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "mineL1YNwcRnxN93B2sX6q22R11WfRqxnY4NBV8KfFY": {
+   "client": "4.4.0-rc.1",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 1,
+   "fee_reversal_rate": 0.16666666666666666,
+   "arrival_kendall_tau": 0.0,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "A1vqhA2fS6K7CvHsJKX1ACcHJFEmyRg4KuR5pctHANy4": {
+   "client": "4.4.0",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 1.0,
+   "arrival_kendall_tau": -0.3333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "GBQ2GvTzmjXMu97dr7WUnLKYTNim1aoZsYS53KYXAAAA": {
+   "client": "4.3.2",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "pSo1KZXgG1EGHch6pPmscfYhv3buXyaj2dR8WkVnkfc": {
+   "client": "26.10.6",
+   "sent": 8,
+   "landed": 8,
+   "in_window": 0,
+   "late": 8,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 0,
+   "fee_reversal_rate": 0.0,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "E1r4Psq84tHfQ6aPTvvDka4U3u8zPVD7gEUrH25RdxHL": {
+   "client": "4.4.0",
+   "sent": 9,
+   "landed": 9,
+   "in_window": 0,
+   "late": 9,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 1,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": -0.3333333333333333,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "3SkE34PVeGck2ArEffFKjihrQgURsvnoTAhitsNXNzXd": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "Certusm1sa411sMpV9FPqU5dXAYhmmhygvxJ23S6hJ24": {
+   "client": "26.10.6",
+   "sent": 9,
+   "landed": 9,
+   "in_window": 0,
+   "late": 9,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": -0.3333333333333333,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "HE2REn7YRhFEghuctv3y1dUEK9aWhw8QQSUpRiHd819r": {
+   "client": "4.4.0",
+   "sent": 4,
+   "landed": 4,
+   "in_window": 0,
+   "late": 4,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 1,
+   "fee_reversals": 1,
+   "fee_reversal_rate": 1.0,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "2mDrrmhSzpSyaF12izGk8hnFjtKCGeCFPwQHpRiJDby2": {
+   "client": "4.4.0",
+   "sent": 7,
+   "landed": 7,
+   "in_window": 0,
+   "late": 7,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 1.0,
+   "arrival_kendall_tau": -0.3333333333333333,
+   "conflict_outcomes": []
+  },
+  "5EhGYUyQNrxgUbuYF4vbL2SZDT6RMfhq3yjeyevvULeC": {
+   "client": "4.4.0",
+   "sent": 9,
+   "landed": 9,
+   "in_window": 0,
+   "late": 9,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "FBbqKvwLfKGZrKrfSbPJz4ymQ7zMarhRyZtu1RBkSe89": {
+   "client": "0.1.1",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "mD1afZhSisoXfJLT8nYwSFANqjr1KPoDUEpYTEfFX1e": {
+   "client": "4.4.0",
+   "sent": 4,
+   "landed": 4,
+   "in_window": 0,
+   "late": 4,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": 1.0,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "3rqEEEGjHRyndHuduBcjkf17rX3hgmGACpYTQYeZ5Ltk": {
+   "client": "4.4.0",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 4,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 1.0,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
+  },
+  "2GUnfxZavKoPfS9s3VSEjaWDzB3vNf5RojUhprCS1rSx": {
+   "client": "4.4.0",
+   "sent": 1,
+   "landed": 1,
+   "in_window": 0,
+   "late": 1,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 0,
+   "fee_reversals": 0,
+   "fee_reversal_rate": null,
+   "arrival_kendall_tau": null,
+   "conflict_outcomes": []
+  },
+  "FGiEdzde7Fco2WLpNQMat299hUVoykJdaA5hxdmCzHiS": {
+   "client": "4.4.0-rc.1",
+   "sent": 7,
+   "landed": 7,
+   "in_window": 0,
+   "late": 7,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 0.3333333333333333,
+   "conflict_outcomes": []
+  },
+  "RBFiUqjYuy4mupzZaU96ctXJBy23sRBRsL3KivDAsFM": {
+   "client": "4.3.2",
+   "sent": 8,
+   "landed": 8,
+   "in_window": 0,
+   "late": 8,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 3,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 0.0,
+   "conflict_outcomes": []
+  },
+  "2DTXh3ruMU2SeWanqr4yeg5GR47V99Jq3wUdStQfda3V": {
+   "client": "4.3.2",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 2,
+   "fee_reversal_rate": 0.3333333333333333,
+   "arrival_kendall_tau": -0.3333333333333333,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "bitHUmbKSQDTGoyoiW3BeqaGWdyV5sS3nYt5SduUHfb": {
+   "client": "4.4.0",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 4,
+   "fee_reversal_rate": 0.6666666666666666,
+   "arrival_kendall_tau": 0.6666666666666666,
+   "conflict_outcomes": [
+    "low_fee_first"
+   ]
+  },
+  "EUcJwf7jXskRE6NZBtFPVH2EedNvNYko8LL2WT62XctB": {
+   "client": "4.4.0",
+   "sent": 10,
+   "landed": 10,
+   "in_window": 0,
+   "late": 10,
+   "dropped": 0,
+   "inclusion_rate": 1.0,
+   "fee_pairs": 6,
+   "fee_reversals": 3,
+   "fee_reversal_rate": 0.5,
+   "arrival_kendall_tau": -1.0,
+   "conflict_outcomes": [
+    "high_fee_first"
+   ]
   }
  },
  "overall": {
-  "fee_pairs": 18,
-  "fee_reversals": 5,
-  "fee_reversal_rate": 0.2777777777777778,
-  "conclusion": "ARRIVAL_DOMINANT",
-  "conclusion_text": "Block order mostly follows send order even against fee differences: ordering is arrival-driven within measurement noise."
+  "fee_pairs": 378,
+  "fee_reversals": 155,
+  "fee_reversal_rate": 0.41005291005291006,
+  "conclusion": "NO_CLEAR_RULE_NOISE",
+  "conclusion_text": "Reversal rate is near chance: no stable ordering rule is distinguishable from noise in this data."
  }
 }

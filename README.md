@@ -5,9 +5,9 @@ specific Solana mainnet validators and read the resulting blocks to infer, per
 validator, what rule decides which transaction lands earlier — priority
 (compute-unit price), arrival order, or no distinguishable rule at all.
 
-> Status skeleton: experiment design, probe, collector and analysis are
-> implemented. Measurement results live in `REPORT.md` and `data/` once the
-> live runs are done.
+> Status: **complete.** 63 live batches / 630 probes were fired on 2026-11-05
+> (epoch 1077), all 630 landed and are included in `data/`. Final results and
+> the full report live in `REPORT.md`.
 
 ## Quick start
 
@@ -57,11 +57,15 @@ identify each probe inside raw block data.
   identity per validator (version string / fork, e.g. Agave, Jito-Agave,
   Frankendancer) is recorded in `config.json` at measurement time, from
   `getClusterNodes` / validators.app data.
-- **Transaction path.** All probes go through a single RPC endpoint
-  (`INSIDE_BLOCK_RPC_URL`, default public mainnet-beta). We do **not**
-  separate "the endpoint's forwarding behaviour" from "the leader's
-  scheduler": if the endpoint staked-connections route differently, that is
-  part of the measured path and is stated as a limitation.
+- **Transaction path.** Probes are submitted through public RPC endpoints
+  only: each transaction is raced through `INSIDE_BLOCK_RPC_URL` (default
+  public mainnet-beta) and any extra endpoints in `SOLANA_RPC_EXTRA`
+  (the live campaign used solana-rpc.publicnode.com); the first success wins
+  and the network dedupes the identical signature. We do **not** separate
+  "the endpoints' forwarding behaviour" from "the leader's scheduler": if
+  public endpoints route or queue differently than staked connections, that
+  is part of the measured path and is stated as a limitation (it turned out
+  to be the dominant effect — see `REPORT.md`).
 - **Own transactions interacting.** Non-conflicting families use distinct
   accounts (no shared write locks except the system program); the conflict
   family deliberately shares one account to force serialization.
